@@ -11,7 +11,7 @@ provider "aws" {
   access_key = ""
   secret_key = ""
   token = ""
-  region = "us-east-1"
+  region = var.aws_region
 }
 
 resource "aws_iam_role" "iam_for_lambda" {
