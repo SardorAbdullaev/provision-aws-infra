@@ -1,14 +1,20 @@
 ﻿Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary
-Initial_Cost_Estimate,US East (N. Virginia),Main Mysql DB,Amazon RDS for MySQL,0,1572.26,18867.12,USD,"Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (150 GB), Quantity (2), Instance type (db.m4.2xlarge), Deployment option (Multi-AZ), Pricing strategy (Reserved 1yr No Upfront), Additional backup storage (1 TB)"
+Initial_Cost_Estimate,US East (N. Virginia),Main Mysql DB,Amazon RDS for MySQL,0,1641.26,19695.12,USD,"Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (300 GB), Quantity (2), Instance type (db.m4.2xlarge), Deployment option (Multi-AZ), Pricing strategy (Reserved 1yr No Upfront), Additional backup storage (1 TB)"
 Initial_Cost_Estimate,US East (N. Virginia),Application Server Reserved ,Amazon EC2,0,532.31,6387.72,USD,"Operating system (Linux), Quantity (8), Pricing strategy (EC2 Instance Savings Plans 1 Year No Upfront), Storage amount (50 GB), Instance type (t4g.xlarge)"
 Initial_Cost_Estimate,US East (N. Virginia),Web application load balancer,Application Load Balancer,0,308.43,3701.16,USD,Number of Application Load Balancers (1)
 Initial_Cost_Estimate,US East (N. Virginia),Application Load Balancers,Application Load Balancer,0,149.65,1795.80,USD,Number of Application Load Balancers (2)
 Initial_Cost_Estimate,US East (N. Virginia),S3 storage,S3 Standard,0,235.79,2829.48,USD,S3 Standard storage (10 TB per month)
-Initial_Cost_Estimate,US East (N. Virginia),S3 storage,S3 Standard - Infrequent Access,0,2772.48,33269.76,USD,S3 Infrequent Access storage (199 TB per month)
+Initial_Cost_Estimate,US East (N. Virginia),S3 storage,S3 Standard - Infrequent Access,0,2562.2,30746.40,USD,S3 Infrequent Access storage (200 TB per month)
 Initial_Cost_Estimate,US East (N. Virginia),S3 storage,Data Transfer,0,921.51,11058.12,USD,"DT Inbound: Internet (100 TB per month), DT Outbound: Internet (10 TB per month)"
 Initial_Cost_Estimate,US East (N. Virginia),IP for ingress ,Amazon Elastic IP,0,0,0.00,USD,"Number of EC2 instances (1), Number of EIPs per instance (1)"
+Initial_Cost_Estimate,US East (N. Virginia),NAT Gateway,Amazon Virtual Private Cloud (VPC),0,70.2,842.40,USD,Number of NAT Gateways (2)
 
+Rationale
+Decreased the S3 Infrequent Access storage from 300 TB to 200 TB.
+Removed Amazon Elastic File System (EFS).
 
+Initially 300 TB of S3 and EFS storage were choosen in order to keep
+redundant user information and all their content in a high quality and without compression. So we can optimize our storage this way.
 
 Acknowledgement
 "* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services."

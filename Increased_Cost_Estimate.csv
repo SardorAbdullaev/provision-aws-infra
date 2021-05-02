@@ -8,8 +8,14 @@ Initial_Cost_Estimate,US East (N. Virginia),S3 storage,S3 Intelligent - Tiering,
 Initial_Cost_Estimate,US East (N. Virginia),S3 storage,S3 Standard - Infrequent Access,0,4065.28,48783.36,USD,S3 Infrequent Access storage (300 TB per month)
 Initial_Cost_Estimate,US East (N. Virginia),S3 storage,Data Transfer,0,921.51,11058.12,USD,"DT Inbound: Internet (100 TB per month), DT Outbound: Internet (10 TB per month)"
 Initial_Cost_Estimate,US East (N. Virginia),IP for ingress ,Amazon Elastic IP,0,0,0.00,USD,"Number of EC2 instances (1), Number of EIPs per instance (1)"
+Initial_Cost_Estimate,US East (N. Virginia),NAT Gateway,Amazon Virtual Private Cloud (VPC),0,70.2,842.40,USD,Number of NAT Gateways (2)
 
+Rationale
+Doubled the RDS and EC2 instances count.
+Added 300TB more of S3 INT storage.
 
+More instances will allow us to increase performance of our services so that letting us handle more users when the company grow.
+Whereas more storage will allow us to save more high quality user data and retrieve it faster.
 
 Acknowledgement
 "* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services."
